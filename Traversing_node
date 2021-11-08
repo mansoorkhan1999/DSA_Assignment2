@@ -13,5 +13,5 @@ class linklist:
         temp = self.head
         while (temp is not None):
             print(temp.data)
-            temp = temp.nex
+            temp = temp.next
 tav=linklist()

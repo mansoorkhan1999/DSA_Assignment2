@@ -1,0 +1,17 @@
+class Node:
+   def __init__(self,data):
+     self.data=data
+     self.next=None
+class linklist:
+   def __init__(self):
+     self.head=None
+
+   def traverse_forward(self):
+        if self.head == None:
+            print("No nodes exist")
+        print("traversal forward")
+        temp = self.head
+        while (temp is not None):
+            print(temp.data)
+            temp = temp.nex
+tav=linklist()

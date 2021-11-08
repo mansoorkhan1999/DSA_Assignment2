@@ -1,0 +1,60 @@
+# Deleting Node at any position
+class node:
+  def __init__(self,data=None):
+    self.data= data
+    self.next=None
+    
+class linkedlist:
+  def __init__(self):
+    self.head=node()
+  def append(self,data):
+    new_node=node(data)
+    curr=self.head
+    while curr.next is not None:
+      curr=curr.next
+    curr.next=new_node
+  #Delete an element at the given position
+  def pop_at(self, position):     
+    if(position < 1):
+      print("\nposition should be >= 1.")
+    elif (position == 1 and self.head != None):
+      nodeToDelete = self.head
+      self.head = self.head.next
+      nodeToDelete = None
+    else:    
+      temp = self.head
+      for i in range(1, position):
+        if(temp != None):
+          temp = temp.next   
+      if(temp != None and temp.next != None):
+        nodeToDelete = temp.next
+        temp.next = temp.next.next
+        nodeToDelete = None 
+      else:
+        print("\nThe node is already null.") 
+
+
+
+  print("All nodes are deleted successfully.")  
+  def display(self):
+    curr=self.head
+    dis=[]
+    while curr.next!=None:
+      curr=curr.next
+      dis.append(curr.data)
+    #dis.reverse()
+    print(dis)
+   
+
+my_list=linkedlist()
+my_list.append(2)
+my_list.append(3)
+my_list.append(5)
+my_list.append(5)
+my_list.append(35)
+print("Before deletion : ")
+my_list.display()
+no=int(input("Enter position no to delete node : "))
+my_list.pop_at(no)
+print("After deletion : ")
+my_list.display()
